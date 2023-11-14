@@ -1,7 +1,33 @@
 <%- include('partials/header', {pageTitle:'Help Result'}) %>
-<h1 class="text-center">Help Result Page</h1>
+<h1 class="text-center">Product Finder Results</h1>
 <p class="text-center"><a href="/">Back to Search</a></p>
-<div class="container">
-  <p>Your DPCI: <%=dpci%></p>
+<div class="container text-center">
+  <p class="d-flex justify-content-around">
+    <span>Your DPCI: <%=dpci%></span>
+    <span>Your Class ID: <%=classID%></span>
+    <span>Your Class Name: <%=classN%></span>
+  </p>
+  <% let wtlotf; %>
+  <% let wtlitb; %>
+
+  <% switch(classID){
+  case '002-00':
+    case '002-01':
+    case '002-02':
+      %>
+  <% wtlotf = 'These should be in section L on the floor. '%>
+  <% wtlitb = ''%>
+  <%default:%>
+  <%switch (department){
+      case '002':%>
+  <p>adfd</p>
+  <%}
+  }%>
+
+  <h2>Where to Look on the Floor:</h2>
+  <p><%=wtlotf%></p>
+  <h2>Where to Look in the Back:</h2>
+  <p><%=wtlitb%></p>
+
 </div>
 <%- include('partials/footer') %>

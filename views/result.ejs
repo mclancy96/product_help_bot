@@ -59,7 +59,31 @@
   <%} %>
   <% } %>
   <% if(sold < 2){%>
-  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned. It is very unlikely that it will be on a reshop cart because electronics usually handles reshop quickly." %>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned. It is very that it will be on a reshop cart because electronics usually handles reshop quickly." %>
+  <!-- =============================================================================== -->
+  <!-- ======================================009====================================== -->
+  <!-- =============================================================================== -->
+  <%} else if(department == '009'){ %>
+  <% wtlotf = "These should be in section D towards the middle of seasonal. These may have a display in other parts of the store during promotions."; %>
+  <% wtlitb = "Items in this department will typically be backstocked in 01A004. These items are seasonal, so they will not be there year round. Some items may get mixed up with kitchen utensils in 02A056, though this is a very rare case. Larger items may end up on the upper level steels."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look for pallets of these near the end the truck line farthest from the bay doors on the left side (if facing the bay doors). Some of the smaller items may end up in repacks." %>
+  <%} %>
+  <% } %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk and upper level reshop in case it was returned." %>
+  <!-- =============================================================================== -->
+  <!-- ======================================012====================================== -->
+  <!-- =============================================================================== -->
+  <%} else if(department == '012'){ %>
+  <% wtlotf = "Items in this department will be in section M near the adult books close to M53 or so. There may be displays for promotions near check lanes."; %>
+  <% wtlitb = "Items in this department will typically be backstocked in 02E001, the electronics wall. Look throughout that wall in the casepacks and wacos to make sure it isn't unlocated."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look for casepacks of the items near the electronics backroom. They will almost never be on the truck line." %>
+  <%} %>
+  <% } %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
   <% } %>
 
 

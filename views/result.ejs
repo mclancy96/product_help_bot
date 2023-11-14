@@ -9,25 +9,72 @@
   </p>
   <% let wtlotf; %>
   <% let wtlitb; %>
+  <% let recentDelivery; %>
+  <% let recentSold; %>
 
-  <% switch(classID){
-  case '002-00':
-    case '002-01':
-    case '002-02':
-      %>
-  <% wtlotf = 'These should be in section L on the floor. '%>
-  <% wtlitb = ''%>
-  <%default:%>
-  <%switch (department){
-      case '002':%>
-  <p>adfd</p>
-  <%}
-  }%>
+  <!-- =============================================================================== -->
+  <!-- ======================================002====================================== -->
+  <!-- =============================================================================== -->
+  <% if(department == '002'){ %>
+  <% wtlotf = "These should be in section L on the floor unless it's kid's storage, which will be in the early V aisles."; %>
+  <% wtlitb = "Most of the items in the 002 department are backstocked in 02A058. For larger items like plastic storage bins and cube organizers, you need to check 99B109 and 110 (Receiving aisle). Kid's storage will be located in 02A039."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look for pallets or flats of items from the 002 department. These can be either upper level or lower level depending on what made it downstairs. On the truck line , you'll find them on the left side (if you're facing the bay doors) closer to the bay doors. Plastic bins will usually say 'Sterilite' or 'HMS' (for Hefty products) on the box itself. Plastic pallets often end up on the upper level steels, so look out for that as well." %>
+  <%} %>
+  <% } %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk and lower level reshop carts in case it was returned." %>
+  <!-- =============================================================================== -->
+  <!-- ======================================003====================================== -->
+  <!-- =============================================================================== -->
+  <%} else if(department == '003'){ %>
+  <% wtlotf = "These should be in section D on the floor. They're located from D6-D13. On rare occasions, they can end up on check lane end caps."; %>
+  <% wtlitb = "Most of the items in the 003 department are backstocked in 01A006"; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look for pallets of chem products, which come in casepacks with brand names like 'Clorox' and 'Lysol'. These pallets will be in the upper level back room. On the truck line, you'll find them on the right side (if you're facing the bay doors) at the very end of the truck line closest to the bay doors." %>
+  <%} %>
+  <% } %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk and upper level reshop carts in case it was returned." %>
+  <!-- =============================================================================== -->
+  <!-- ======================================007====================================== -->
+  <!-- =============================================================================== -->
+  <%} else if(department == '007'){ %>
+  <% wtlotf = "These should be in section S on the floor."; %>
+  <% wtlitb = "This department has a few aisles in the backroom to check depending on your item. Diapers will be located in 02A051. Wipes will be located in 02A051. Toiletries and medicines will be located in 02A052. Baby food will be located in 02A073. Baby formula will be located in 02A074."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look for u-boats or pallets. If you're looking for diapers or wipes, these will be very obvious pallets. If you're looking for any other products, you will either find them in baby repacks or baby u-boats. Baby food and formula are typically put on u-boats. Other baby products typically end up in repacks. For repacks, you'll need to either look up the repack yourself or have a TL do it for you." %>
+  <%} %>
+  <% } %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk and lower level reshop carts in case it was returned." %>
+  <!-- =============================================================================== -->
+  <!-- ======================================008====================================== -->
+  <!-- =============================================================================== -->
+  <%} else if(department == '008'){ %>
+  <% wtlotf = "These should be in section M on the floor in electronics."; %>
+  <% wtlitb = "This department has a few aisles in the backroom to check depending on your item. Most of them will be in 02E001, 002, or 003. If you're looking for TVs, they are on the TV steels 99B211-214. Batteries and DVDs typically end up in 02E002. If your item is more expensive, it will likely end up in 02E003. When in doubt, ask the TM in electronics for help."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look for u-boats or pallets of electronics casepacks and repacks. We don't usually have too many of these because they get pushed by an electronics TM. As soon as they come off the truck, they are almost always sent down to the electronics backroom area, so it will very rarely stay on the truck line. " %>
+  <%} %>
+  <% } %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned. It is very unlikely that it will be on a reshop cart because electronics usually handles reshop quickly." %>
+  <% } %>
+
 
   <h2>Where to Look on the Floor:</h2>
   <p><%=wtlotf%></p>
   <h2>Where to Look in the Back:</h2>
   <p><%=wtlitb%></p>
+  <%if(recentDelivery){%>
+  <h2>Recently Delivered:</h2>
+  <p><%=recentDelivery%></p>
+  <%}%>
+  <%if(recentSold){%>
+  <h2>Recently Sold:</h2>
+  <p><%=recentSold%></p>
+  <%}%>
 
 </div>
 <%- include('partials/footer') %>

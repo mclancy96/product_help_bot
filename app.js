@@ -6,7 +6,8 @@ import express from 'express';
 import { configDotenv } from 'dotenv';
 import { CLASS_NAMES } from './constants.js';
 
-var app = express();
+const ONE_DAY_MS = 86400000;
+const app = express();
 configDotenv();
 
 app.set('port', process.env.PORT || 3001);
@@ -23,7 +24,16 @@ app.post('/product', (req, res) => {
     return;
   }
   const classN = getClassN(req.body.dpci);
-  res.render('result', { dpci: req.body.dpci, department: req.body.dpci.substring(0, 3), classID: req.body.dpci.substring(0, 6), classN: classN, delivery: req.body.delivery, sold: req.body.delivery })
+  let deliveryDays;
+  let soldDays;
+  if (req.body.delivery) {
+    deliveryDays = (Date.now() - (new Date(req.body.delivery)).getTime()) / ONE_DAY_MS
+  }
+
+  if (req.body.sold) {
+    soldDays = (Date.now() - (new Date(req.body.sold)).getTime()) / ONE_DAY_MS
+  }
+  res.render('result', { dpci: req.body.dpci, department: req.body.dpci.substring(0, 3), classID: req.body.dpci.substring(0, 6), classN: classN, delivery: deliveryDays, sold: soldDays })
 })
 
 const getClassN = (dpci) => {

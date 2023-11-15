@@ -84,13 +84,53 @@
   <% } %>
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
+  <!-- =============================================================================== -->
+  <!-- ==========================013 014 016 017 020 021 029========================== -->
+  <!-- =============================================================================== -->
+  <%} else if(department == '013' || department == '014' || department == '016' || department == '017' || department == '020' || department == '021' || department == '029'){ %>
+  <% wtlotf = "Items in this department will be located on the upper level in the women's section. The exact section on the floor "; %>
+  <% wtlitb = "In the back, you can find these in 02A59-62 in the women's backstock aisles. You should also check the fitting room in the women's section. On occasion, you may find these in style breakout even if they haven't been delivered recently."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to scan through style breakout and any pallets that appear to be style repacks or casepacks." %>
+  <%} %>
   <% } %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
+  <!-- =============================================================================== -->
+  <!-- ==============================022 023 025 026-01=============================== -->
+  <!-- =============================================================================== -->
+  <%} else if(department == '022' || department == '023' || department == '025' || classID == '026-01'){ %>
+  <% wtlotf = "These items will be on the upper level in women's. For bras, panties, and other intimate clothing, you'll find these in the women's section near the escalator. For women's watches and legwear, you'll find it near the women's shoe section over the wall of bras near the escalator."; %>
+  <% wtlitb = "These will be backstocked in 02A63-64. You should also check the reshop by the fitting room."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to scan through style breakout for it. " %>
+  <%} %>
+  <% } %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
+  <!-- =============================================================================== -->
+  <!-- ==================================061 027 215================================== -->
+  <!-- =============================================================================== -->
+  <%} else if(department == '027' || department == '215' || department == '061'){ %>
+  <% wtlotf = "These items will be in the accessories section of their respective departments. For women's jewelry and accessories, these should be in the women's accessories section, but some may be the department for their brand, so Wild Fable jewelry can be on an display in Wild Fable, for example. Beyond that, you can also find extra jewelry and accessories inside the displays on the floor themselves. Some of the displays have shelves for storage and some have a lid that you can take off to find extra merchandise."; %>
+  <% wtlitb = "These will be backstocked in 02A64 with women's accessories. Sometimes you will find these in style breakout even without a recent date. You should also check the reshop by the fitting room."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to scan through style breakout for it. Jewelry is usually delivered in a casepack." %>
+  <%} %>
+  <% } %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
+  <%}%>
 
+  <!-- =============================================================================== -->
+  <!-- =================================Page Content================================== -->
+  <!-- =============================================================================== -->
 
   <h2>Where to Look on the Floor:</h2>
   <p><%=wtlotf%></p>
   <h2>Where to Look in the Back:</h2>
   <p><%=wtlitb%></p>
+  <small class="text-secondary"><i>Keep in mind that just because you don't have a backroom location for an item doesn't mean that the item you're looking for isn't in the aisles that it would be backstocked in. The system may not know that the item you're looking for is in the back even though it is. This is usually due to team members unlocating items or not backstocking them properly in the first place. For those reasons, always double check the aisles that an item would be backstocked in to be sure that you're looking everywhere.</i></small>
   <%if(recentDelivery){%>
   <h2>Recently Delivered:</h2>
   <p><%=recentDelivery%></p>
@@ -99,6 +139,8 @@
   <h2>Recently Sold:</h2>
   <p><%=recentSold%></p>
   <%}%>
+  <h2>Not in any of those Locations?</h2>
+  <p>If you've check all of those locations, click the item's DPCI (the number in blue). From there, click the yellow button that say's "Item Details". Look at the dates listed. If there is a recent (0-2 days) "filled" date, that means that the item you're looking for was recently pulled from the backroom and is likely in a cart of pulled items. Look near the backstock aisles for these carts.<br> It is also possible that a recent pull cart or reshop cart is out on the floor being pushed or about to be pushed, so look out for those carts in the section on the salesfloor because your item may be there as well.</p>
 
 </div>
 <%- include('partials/footer') %>

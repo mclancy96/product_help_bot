@@ -1,6 +1,6 @@
 <%- include('partials/header', {pageTitle:'Help Result'}) %>
 <h1 class="text-center">Product Finder Results</h1>
-<p class="text-center"><a href="/">Back to Search</a></p>
+<p class="text-center"><a href="/">Back to Search</a><a href="/repack">Help Reading Repack</a></p>
 <div class="container text-center">
   <p class="d-flex justify-content-around">
     <span>Your DPCI: <%=dpci%></span>
@@ -11,6 +11,7 @@
   <% let wtlitb; %>
   <% let recentDelivery; %>
   <% let recentSold; %>
+  <% let deliveryImage = {text:undefined, source:undefined}; %>
 
   <!-- =============================================================================== -->
   <!-- ======================================002====================================== -->
@@ -21,167 +22,232 @@
   <% if(delivery<6){%>
   <% recentDelivery = "This item was recently delivered, so you will need to look for pallets or flats of items from the 002 department. These can be either upper level or lower level depending on what made it downstairs. On the truck line , you'll find them on the left side (if you're facing the bay doors) closer to the bay doors. Plastic bins will usually say 'Sterilite' or 'HMS' (for Hefty products) on the box itself. Plastic pallets often end up on the upper level steels, so look out for that as well." %>
   <%} %>
-  <% } %>
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk and lower level reshop carts in case it was returned." %>
   <!-- =============================================================================== -->
   <!-- ======================================003====================================== -->
   <!-- =============================================================================== -->
-  <%} else if(department == '003'){ %>
+  <%}} else if(department == '003'){ %>
   <% wtlotf = "These should be in section D on the floor. They're located from D6-D13. On rare occasions, they can end up on check lane end caps."; %>
   <% wtlitb = "Most of the items in the 003 department are backstocked in 01A006"; %>
   <% if(delivery<6){%>
   <% recentDelivery = "This item was recently delivered, so you will need to look for pallets of chem products, which come in casepacks with brand names like 'Clorox' and 'Lysol'. These pallets will be in the upper level back room. On the truck line, you'll find them on the right side (if you're facing the bay doors) at the very end of the truck line closest to the bay doors." %>
   <%} %>
-  <% } %>
-  <% if(sold < 2){%>
+  <%if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk and upper level reshop carts in case it was returned." %>
   <!-- =============================================================================== -->
   <!-- ======================================007====================================== -->
   <!-- =============================================================================== -->
-  <%} else if(department == '007'){ %>
+  <%}} else if(department == '007'){ %>
   <% wtlotf = "These should be in section S on the floor."; %>
   <% wtlitb = "This department has a few aisles in the backroom to check depending on your item. Diapers will be located in 02A051. Wipes will be located in 02A051. Toiletries and medicines will be located in 02A052. Baby food will be located in 02A073. Baby formula will be located in 02A074."; %>
   <% if(delivery<6){%>
   <% recentDelivery = "This item was recently delivered, so you will need to look for u-boats or pallets. If you're looking for diapers or wipes, these will be very obvious pallets. If you're looking for any other products, you will either find them in baby repacks or baby u-boats. Baby food and formula are typically put on u-boats. Other baby products typically end up in repacks. For repacks, you'll need to either look up the repack yourself or have a TL do it for you." %>
   <%} %>
-  <% } %>
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk and lower level reshop carts in case it was returned." %>
   <!-- =============================================================================== -->
   <!-- ======================================008====================================== -->
   <!-- =============================================================================== -->
-  <%} else if(department == '008'){ %>
+  <%}} else if(department == '008'){ %>
   <% wtlotf = "These should be in section M on the floor in electronics."; %>
   <% wtlitb = "This department has a few aisles in the backroom to check depending on your item. Most of them will be in 02E001, 002, or 003. If you're looking for TVs, they are on the TV steels 99B211-214. Batteries and DVDs typically end up in 02E002. If your item is more expensive, it will likely end up in 02E003. When in doubt, ask the TM in electronics for help."; %>
   <% if(delivery<6){%>
   <% recentDelivery = "This item was recently delivered, so you will need to look for u-boats or pallets of electronics casepacks and repacks. We don't usually have too many of these because they get pushed by an electronics TM. As soon as they come off the truck, they are almost always sent down to the electronics backroom area, so it will very rarely stay on the truck line. " %>
   <%} %>
-  <% } %>
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned. It is very that it will be on a reshop cart because electronics usually handles reshop quickly." %>
   <!-- =============================================================================== -->
   <!-- ======================================009====================================== -->
   <!-- =============================================================================== -->
-  <%} else if(department == '009'){ %>
+  <%}} else if(department == '009'){ %>
   <% wtlotf = "These should be in section D towards the middle of seasonal. These may have a display in other parts of the store during promotions."; %>
   <% wtlitb = "Items in this department will typically be backstocked in 01A004. These items are seasonal, so they will not be there year round. Some items may get mixed up with kitchen utensils in 02A056, though this is a very rare case. Larger items may end up on the upper level steels."; %>
   <% if(delivery<6){%>
   <% recentDelivery = "This item was recently delivered, so you will need to look for pallets of these near the end the truck line farthest from the bay doors on the left side (if facing the bay doors). Some of the smaller items may end up in repacks." %>
   <%} %>
-  <% } %>
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk and upper level reshop in case it was returned." %>
   <!-- =============================================================================== -->
   <!-- ======================================012====================================== -->
   <!-- =============================================================================== -->
-  <%} else if(department == '012'){ %>
+  <%}} else if(department == '012'){ %>
   <% wtlotf = "Items in this department will be in section M near the adult books close to M53 or so. There may be displays for promotions near check lanes."; %>
   <% wtlitb = "Items in this department will typically be backstocked in 02E001, the electronics wall. Look throughout that wall in the casepacks and wacos to make sure it isn't unlocated."; %>
   <% if(delivery<6){%>
   <% recentDelivery = "This item was recently delivered, so you will need to look for casepacks of the items near the electronics backroom. They will almost never be on the truck line." %>
   <%} %>
-  <% } %>
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
   <!-- =============================================================================== -->
-  <!-- ==========================013 014 016 017 020 021 029 217========================== -->
+  <!-- ======================013 014 016 017 020 021 029 217 238====================== -->
   <!-- =============================================================================== -->
-  <%} else if(department == '013' || department == '014' || department == '016' || department == '017' || department == '020' || department == '021' || department == '029' || department == '217'){ %>
-  <% wtlotf = "Items in this department will be located on the upper level in the women's section. The exact section on the floor "; %>
+  <%}} else if(department == '013' || department == '014' || department == '016' || department == '017' || department == '020' || department == '021' || department == '029' || department == '217' || department == '238'){ %>
+  <% wtlotf = "Items in this department will be located on the upper level in the women's section. The exact section on the floor depending on the brand in question. The areas within each section is divided by brand."; %>
   <% wtlitb = "In the back, you can find these in 02A59-62 in the women's backstock aisles. You should also check the fitting room in the women's section. On occasion, you may find these in style breakout even if they haven't been delivered recently."; %>
   <% if(delivery<6){%>
   <% recentDelivery = "This item was recently delivered, so you will need to scan through style breakout and any pallets that appear to be style repacks or casepacks." %>
   <%} %>
-  <% } %>
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
   <!-- =============================================================================== -->
-  <!-- ==============================022 023 025 026-01=============================== -->
+  <!-- ==============================022 023 025 026-01 096=============================== -->
   <!-- =============================================================================== -->
-  <%} else if(department == '022' || department == '023' || department == '025' || classID == '026-01'){ %>
+  <%}} else if(department == '022' || department == '023' || department == '025' || classID == '026-01' || department == '096'){ %>
   <% wtlotf = "These items will be on the upper level in women's. For bras, panties, and other intimate clothing, you'll find these in the women's section near the escalator. For women's watches and legwear, you'll find it near the women's shoe section over the wall of bras near the escalator."; %>
   <% wtlitb = "These will be backstocked in 02A63-64. You should also check the reshop by the fitting room."; %>
   <% if(delivery<6){%>
   <% recentDelivery = "This item was recently delivered, so you will need to scan through style breakout for it. " %>
   <%} %>
-  <% } %>
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
   <!-- =============================================================================== -->
   <!-- ==================================061 027 215================================== -->
   <!-- =============================================================================== -->
-  <%} else if(department == '027' || department == '215' || department == '061'){ %>
-  <% wtlotf = "These items will be in the accessories section of their respective departments. For women's jewelry and accessories, these should be in the women's accessories section, but some may be the department for their brand, so Wild Fable jewelry can be on an display in Wild Fable, for example. Beyond that, you can also find extra jewelry and accessories inside the displays on the floor themselves. Some of the displays have shelves for storage and some have a lid that you can take off to find extra merchandise."; %>
+  <%}} else if(department == '027' || department == '215' || department == '061'){ %>
+  <% wtlotf = "These items will be in the accessories section of their respective departments. For women's jewelry and accessories, these should be in the women's accessories section, but some may be the department for their brand, so Wild Fable jewelry can be on an display in Wild Fable, for example. Beyond that, you can also find extra jewelry and accessories inside the displays on the floor themselves. Some of the displays have shelves for storage and some have a lid that you can take off to find extra merchandise. Women's shoes are located near the upper level parking lot entrance across from Universal Threads. "; %>
   <% wtlitb = "These will be backstocked in 02A64 with women's accessories. Sometimes you will find these in style breakout even without a recent date. You should also check the reshop by the fitting room."; %>
   <% if(delivery<6){%>
   <% recentDelivery = "This item was recently delivered, so you will need to scan through style breakout for it. Jewelry is usually delivered in a casepack." %>
   <%} %>
-  <% } %>
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
   <!-- =============================================================================== -->
   <!-- ======================================030====================================== -->
   <!-- =============================================================================== -->
-  <%} else if(department == '030'){ %>
+  <%}} else if(department == '030'){ %>
   <% wtlotf = "These items are all along section S on the salesfloor. The bigger items are on the wall of this section."; %>
   <% wtlitb = "These will be backstocked in multiple locations depending on the product. Most of the items that you find in aisles S8-S21 will be backstocked in 02A052. Larger and bulkier items will be backstocked on the lower level steels 99B207-210."; %>
   <% if(delivery<6){%>
   <% recentDelivery = "This item was recently delivered, so you will need to look on the truck line at the end closest to the bay doors. Baby pallets are usually easy to identify, so look out for car seats and diapers, and you will be in the right place. If you item came in a repack, baby repacks are a little harder to identify, so you'll have to open a few repacks on a pallet to see if it has baby products." %>
   <%} %>
-  <% } %>
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
   <!-- =============================================================================== -->
   <!-- ==================================031 033 206================================== -->
   <!-- =============================================================================== -->
-  <%} else if(department == '031' || department == '033' ||department == '206'){ %>
+  <%}} else if(department == '031' || department == '033' ||department == '206'){ %>
   <% wtlotf = "These items are mostly located in the NIT (Newborn/Infant/Toddler) clothing section of the salesfloor by stationary and the lower level mall entrance. Some may be located in S."; %>
   <% wtlitb = "These will be backstocked in multiple locations. Most of the items will end up in 02A062. This has all of the NIT clothing. In rare cases, you'll find some items in 02A052 if they are NIT accessories or baby pajamas. It couldn't hurt to double check 02A052 for anything you can't find."; %>
   <% if(delivery<6){%>
   <% recentDelivery = "This item was recently delivered, so you will need to scan through style breakout and style repacks/casepacks to try to find your item." %>
   <%} %>
-  <% } %>
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
   <!-- =============================================================================== -->
   <!-- =================026-04 032 036 039 046 075 077 093 205 326 035================ -->
   <!-- =============================================================================== -->
-  <%} else if(classID == '026-04' || department == '032' || department == '036'|| department == '039'|| department == '046'|| department == '075'|| department == '077'|| department == '093'|| department == '205'|| department == '326' || department == '035'){ %>
+  <%}} else if(classID == '026-04' || department == '032' || department == '036'|| department == '039'|| department == '046'|| department == '075'|| department == '077'|| department == '093'|| department == '205'|| department == '326' || department == '035'){ %>
   <% wtlotf = "These items are located on the lower level near the escalator. Girls, boys, kids' basics, and kids' shoes are all next to each other on the floor. Different brands, such as Art Class and Cat and Jack are going to be separated within those specific sections, so make sure you're looking in the right area. Kids' basics, e.g., socks and underwear, are located along the back of boys and girls. You may also find these items in the fitting room reshop."; %>
   <% wtlitb = "Girls' clothing is located in 02A061 in the second half of the aisle. Boys' clothing is located in 02A071-072. Accessories and basics for both boys and girls are located in the wacos in 072. Some may accidentally end up in 052."; %>
   <% if(delivery<6){%>
   <% recentDelivery = "This item was recently delivered, so you will need to scan through style breakout and style repacks/casepacks to try to find your item." %>
   <%} %>
-  <% } %>
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk and any style reshop in case it was returned." %>
 
   <!-- =============================================================================== -->
-  <!-- =========================== 037 049 052 063 094 245 =========================== -->
+  <!-- ========================= 037 049 052 063 094 245 208 ========================= -->
   <!-- =============================================================================== -->
-  <%} else if(department == '037' || department == '049' || department == '052' || department == '063' || department == '094' || department == '245'){ %>
+  <%}} else if(department == '037' || department == '049' || department == '052' || department == '063' || department == '094' || department == '245' || department == '208'){ %>
   <% wtlotf = "These items are located in both sections A (by the pharmacy) and C, which runs parallel to the escalator next to Market. Some of these products may end up on an endcap at the check lanes on rare occasions."; %>
   <% wtlitb = "These will all be backstocked in the cosmetic closet at the back corner of market. These locations are 01H001-009. The code for that door is the same as TSC."; %>
   <% if(delivery<6){%>
   <% recentDelivery = "This item was recently delivered, so you will need to check u-boats for C and A near the middle of the truck line on the right side (if facing the bay doors). If this is a cosmetic product, you can also expect to find it in a repack, which is at the end of the truck line farthest from the bay doors." %>
   <%} %>
-  <% } %>
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk and the cosmetic closet reshop in case it was returned." %>
   <!-- =============================================================================== -->
   <!-- =================040 041 042 043 044 047 073 098 026-14 026-08================ -->
   <!-- =============================================================================== -->
-  <%} else if(classID == '026-08' ||bclassID == '026-14' || department == '040' || department == '041' || department == '042' || department == '043' || department == '044' || department == '073' || department == '090'){ %>
+  <%}} else if(classID == '026-08' ||classID == '026-14' || department == '040' || department == '041' || department == '042' || department == '043' || department == '044' || department == '073' || department == '090'){ %>
   <% wtlotf = "These items are located on the lower level along the wall by the parking lot entrance. Closest to the entrance is the Goodfellow brand. After Goodfellow is Men's shoes. Men's basics (underwear/socks) will be towards the end of that section farthest from the entrance. Beyond Men's basics is Men's performance, which has the All in Motion brand. After performance is Fan Central. You will need to check the fitting room reshop by women's to make sure your items are not in there."; %>
   <% wtlitb = "Men's clothing is backstocked in 02A068-070. Men's shoes are in 02A065. Fan central tends to end up mixed into different aisles but more often than not is concentrated in the men's aisles."; %>
   <% if(delivery<6){%>
   <% recentDelivery = "This item was recently delivered, so you will need to scan through style breakout and style repacks/casepacks to try to find your item." %>
   <%} %>
-  <% } %>
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk and any style reshop in case it was returned." %>
-  <%}%>
+  <!-- =============================================================================== -->
+  <!-- ==================================051 240================================== -->
+  <!-- =============================================================================== -->
+  <%}} else if(department == '051' || department == '240'){ %>
+  <% wtlotf = "These items are mostly located in seasonal, which is section D of the upper level. Some of these items may be on or near the check lanes."; %>
+  <% wtlitb = "These will be backstocked in multiple locations. Most of the items will end up in 01A002-004. Bulky and large items will end up on the upper level steel 99B100 or 101. Seasonal items have a higher tendencies than other types of products to become unlocated in the back, so be very thorough in your search."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look through the truck line to find pallets of seasonal repacks or casepacks. If your item is bigger or not on the salesfloor yet, it may end up on the steel above the truck line 99B105-108. " %>
+  <%} %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
+  <!-- =============================================================================== -->
+  <!-- ==================================053 081 054================================== -->
+  <!-- =============================================================================== -->
+  <%}} else if(department == '053' || department == '081' || department == '054'){ %>
+  <% wtlotf = "These items are located on the lower level by the mall entrance in section J. "; %>
+  <% wtlitb = "These will be backstocked in 02E005-008. During BTS (Back to School), you may find these in the seasonal aisles 01A002-004. Stationary tends to get stuck on the truck line next to Market on the right side if facing the bay doors. Cards are usually not something we have to pick, so you won't have to run into too may of them. If you did need to look for more cards, these are a vendor item that end up in the vendor steel. "; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look through the truck line on the right side by Market to see if you can find stationary repacks and casepacks. These tend to be somewhat obvious based on the products on the u-boats and flats. Candle casepacks will be on u-boats and tend to all be sorted together. The casepacks say 'Fragile' on them, so it makes it easier to spot." %>
+  <%} %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
+  <!-- =============================================================================== -->
+  <!-- ===================================== 055 ===================================== -->
+  <!-- =============================================================================== -->
+  <%}} else if(department == '055' ){ %>
+  <% wtlotf = "These items are located in section B. If this is a seasonal candy, it will be in mini seasonal, D37-D46. On some occasions, these products may end up on the check lanes or market end caps."; %>
+  <% wtlitb = "Candy will be located in the candy closet 01K001-002. The candy closet is located in market. The door is next to the packs of water bottles, and the code is the same as TSC. For seasonal candy, you will likely find it in 01A002 or 01A029. Depending on how the push is, you can also check the ambient room for candy."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look through the truck line on the right side by Market to see if you can find any candy repacks. Candy will also be moved to the ambient when it is delivered, so that is another place to check." %>
+  <% } %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
+  <!-- =============================================================================== -->
+  <!-- ======================= 056 057 058 080 201 207 276 790 ======================= -->
+  <!-- =============================================================================== -->
+  <%}} else if(department == '056' || department == '057' || department == '058' || department == '080' || department == '201' || department == '207' || department == '276' || department == '290'){ %>
+  <% wtlotf = "These items are located in section M in electronics. There are some gift cards on the back wall of electronics, but you will need to look at the check lanes as well as the gift card end cap in section J."; %>
+  <% wtlitb = "These products are backstocked in the 02E aisles. Computer hardware/accessories will typically be in 02E001 but may end up in 003 or 004 depending on price. All smart phones and video games will be backstocked in 02E003. Video game hardware is backstocked in 02E004. Some portable electronics will be in 002 while others are in 003."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look near electronics for either electronics repacks or casepacks. You should not find any electronics on the truck line if the inbound team did their job correctly." %>
+  <%} %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk and any electronics reshop in case it was returned." %>
+  <!-- =============================================================================== -->
+  <!-- ===================================== 059 ===================================== -->
+  <!-- =============================================================================== -->
+  <%}} else if(department == '059' ){ %>
+  <% wtlotf = "Adult books (books that are not children's books) are located in section M between electronics and travel. Children's books are located in section O near toys and sporting goods. "; %>
+  <% wtlitb = "Books are all backstocked in 02A023."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look through the truck line on the left side of the line or in random locations throughout the lower level backroom. Books will be delivered in red striped boxes that are technically repacks but don't look like the Target branded repacks that come off the truck. Instead of having to look through every repack, it is strongly advised that you get a repack number." %>
+  <% deliveryImage = {text: 'This is what a book repack looks like.', source:'/img/book_repack.jpeg'}%>
+  <%} %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
+  <!-- =============================================================================== -->
+  <!-- ================= 060 062 064 065 066 067 068 069 070 097 200 ================= -->
+  <!-- =============================================================================== -->
+  <%}} else if(department == '059' || department == '060' || department == '062' || department == '064' || department == '065' || department == '066' || department == '067' || department == '068' || department == '069' || department == '070' || department == '097' || department == '200'){ %>
+  <% wtlotf = "These items are located in V and K on the lower level. These are collectively known as 'Domestics'. Luggage and travel items will be located in the last aisles of M. "; %>
+  <% wtlitb = "Items located in V, travel, and the early K aisles will be backstocked throughout 02A029-039. Many domestics items have RFID chips, so if that is true for your item, be sure to scan through those backroom locations with an RFID gun. Kitchen tools, appliances, window coverings, and accessories will be backstocked in 02A053-58. For larger items like furniture and rugs, you will find those on the lower level steel 99B204-206. Some larger appliances will be backstocked in the style breakout steel 99B103-104"; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look through the truck line on the left side of the line for repacks or casepacks. The larger items will be easier to identify by their boxes. Domestics repacks end up at the 99B105 steel closest to the bay doors. You can also find casepacks of domestics on the left side (facing the bay doors) of the truck line." %>
+  <%} %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
+
+  <!-- =============================================================================== -->
+  <!-- =================================== Default =================================== -->
+  <!-- =============================================================================== -->
+  <%}} else{ %>
+  <% wtlotf = "This DPCI is not in our system. Please see a TL for assistance."; %>
+  <% wtlitb = "This DPCI is not in our system. Please see a TL for assistance."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look through the back for it. This DPCI is not in our system. Please see a TL for assistance." %>
+  <%} %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned. This DPCI is not in our system. Please see a TL for assistance." %>
+  <%}}%>
 
   <!-- =============================================================================== -->
   <!-- =================================Page Content================================== -->
@@ -196,12 +262,13 @@
   <h2>Recently Delivered:</h2>
   <p><%=recentDelivery%></p>
   <%}%>
+  <%- deliveryImage.text ? include('partials/image', {source: deliveryImage.source, text: deliveryImage.text}) : ''%>
   <%if(recentSold){%>
   <h2>Recently Sold:</h2>
   <p><%=recentSold%></p>
   <%}%>
   <h2>Not in any of those Locations?</h2>
-  <p>If you've check all of those locations, click the item's DPCI (the number in blue). From there, click the yellow button that say's "Item Details". Look at the dates listed. If there is a recent (0-2 days) "filled" date, that means that the item you're looking for was recently pulled from the backroom and is likely in a cart of pulled items. Look near the backstock aisles for these carts.<br> It is also possible that a recent pull cart or reshop cart is out on the floor being pushed or about to be pushed, so look out for those carts in the section on the salesfloor because your item may be there as well.</p>
+  <p>If you've check all of those locations, click the item's DPCI (the number in blue). From there, click the yellow button that say's "Item Details". Look at the dates listed. If there is a recent (0-2 days) "filled" date, that means that the item you're looking for was recently pulled from the backroom and is likely in a cart of pulled items. Look near the backstock aisles for these carts.<br><br> It is also possible that a recent pull cart or reshop cart is out on the floor being pushed or about to be pushed, so look out for those carts in the section on the salesfloor because your item may be there as well.<br><br>Another option is that the item you're looking for came in a repack or casepack that weren't delivered recently but haven't been pushed yet and is either sitting on a pallet somewhere in the back or up in the steel. <br><br> If you've reached this point, you should get with a TL to help you find this item.</p>
 
 </div>
 <%- include('partials/footer') %>

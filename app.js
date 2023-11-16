@@ -13,10 +13,11 @@ configDotenv();
 app.set('port', process.env.PORT || 3001);
 app.set('views', './views');
 app.set('view engine', 'ejs');
-app.use(express.static('/public'));
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => { res.render('index') });
+app.get('/repack', (req, res) => { res.render('repack') });
 
 app.post('/product', (req, res) => {
   if (!req.body || !req.body.dpci) {

@@ -1,7 +1,10 @@
 <%- include('partials/header', {pageTitle:'Enter DPCI'}) %>
-<h1 class="text-center">Reading Container/Repack Barcode Numbers</h1>
+<h1 class="text-center">Reading Carton/Repack Barcode Numbers</h1>
 <p class="text-center"><a href="/">Back to Search</a></p>
 <div class="container">
-  <p>If you're having a hard time understanding how to read repack/container numbers, this page will attempt to explain it better for you.</p>
+  <p>We use carton numbers to figure out which repack we're looking for so we don't have to dig through each one to find a product. If you're having a hard time understanding how to read repack/carton numbers, this page will attempt to explain it better for you. Here is what a carton label looks like:</p>
+  <%- include('partials/image', {text:'A carton label from a casepack', source:'/img/repack.png'}) %>
+  <p>If you were to look up the carton/repack number on the Greenfield card for carton numbers (or if a TL does it for you), they will tell you the last 5 numbers of the carton number. The carton number itself is the long number under that large barcode (in this case 91380401186602923126). The last five comes before the store number (2312), and there's a space in the barcode number right before it. In this case, the last 5 are 66029. See the below image for the last five highlighted with a blue box:</p>
+  <%- include('partials/image', {text:"The blue box shows the last five numbers of the container, which is what you will use to determine if you're looking at the correct repack. ", source:'/img/repack_highlight.png'}) %>
 </div>
 <%- include('partials/footer') %>

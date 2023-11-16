@@ -58,13 +58,13 @@
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned. It is very that it will be on a reshop cart because electronics usually handles reshop quickly." %>
   <!-- =============================================================================== -->
-  <!-- ======================================009====================================== -->
+  <!-- ====================================009 084==================================== -->
   <!-- =============================================================================== -->
-  <%}} else if(department == '009'){ %>
+  <%}} else if(department == '009' || department == '084'){ %>
   <% wtlotf = "These should be in section D towards the middle of seasonal. These may have a display in other parts of the store during promotions."; %>
   <% wtlitb = "Items in this department will typically be backstocked in 01A004. These items are seasonal, so they will not be there year round. Some items may get mixed up with kitchen utensils in 02A056, though this is a very rare case. Larger items may end up on the upper level steels."; %>
   <% if(delivery<6){%>
-  <% recentDelivery = "This item was recently delivered, so you will need to look for pallets of these near the end the truck line farthest from the bay doors on the left side (if facing the bay doors). Some of the smaller items may end up in repacks." %>
+  <% recentDelivery = "This item was recently delivered, so you will need to look for pallets of these near the end the truck line farthest from the bay doors on the left side (if facing the bay doors). Some of the smaller items may end up in repacks. Some pallets may end up near the pet steel 99B101" %>
   <%} %>
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk and upper level reshop in case it was returned." %>
@@ -216,7 +216,7 @@
   <!-- ===================================== 059 ===================================== -->
   <!-- =============================================================================== -->
   <%}} else if(department == '059' ){ %>
-  <% wtlotf = "Adult books (books that are not children's books) are located in section M between electronics and travel. Children's books are located in section O near toys and sporting goods. "; %>
+  <% wtlotf = "Adult books (books that are not children's books) are located in section M between electronics and travel. Children's books are located in section O near toys and sporting goods."; %>
   <% wtlitb = "Books are all backstocked in 02A023."; %>
   <% if(delivery<6){%>
   <% recentDelivery = "This item was recently delivered, so you will need to look through the truck line on the left side of the line or in random locations throughout the lower level backroom. Books will be delivered in red striped boxes that are technically repacks but don't look like the Target branded repacks that come off the truck. Instead of having to look through every repack, it is strongly advised that you get a repack number." %>
@@ -225,13 +225,84 @@
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
   <!-- =============================================================================== -->
-  <!-- ================= 060 062 064 065 066 067 068 069 070 097 200 ================= -->
+  <!-- =============== 060 062 064 065 066 067 068 069 070 072 097 200 =============== -->
   <!-- =============================================================================== -->
-  <%}} else if(department == '059' || department == '060' || department == '062' || department == '064' || department == '065' || department == '066' || department == '067' || department == '068' || department == '069' || department == '070' || department == '097' || department == '200'){ %>
-  <% wtlotf = "These items are located in V and K on the lower level. These are collectively known as 'Domestics'. Luggage and travel items will be located in the last aisles of M. "; %>
+  <%}} else if(department == '059' || department == '060' || department == '062' || department == '064' || department == '065' || department == '066' || department == '067' || department == '068' || department == '069' || department == '070' || department == '072' || department == '097' || department == '200'){ %>
+  <% wtlotf = "These items are located in V and K on the lower level. These are collectively known as 'Domestics'. Luggage and travel items will be located in the last aisles of M. Some small appliances, irons, floor care, and sewing accessories will be in section L by electronics."; %>
   <% wtlitb = "Items located in V, travel, and the early K aisles will be backstocked throughout 02A029-039. Many domestics items have RFID chips, so if that is true for your item, be sure to scan through those backroom locations with an RFID gun. Kitchen tools, appliances, window coverings, and accessories will be backstocked in 02A053-58. For larger items like furniture and rugs, you will find those on the lower level steel 99B204-206. Some larger appliances will be backstocked in the style breakout steel 99B103-104"; %>
   <% if(delivery<6){%>
   <% recentDelivery = "This item was recently delivered, so you will need to look through the truck line on the left side of the line for repacks or casepacks. The larger items will be easier to identify by their boxes. Domestics repacks end up at the 99B105 steel closest to the bay doors. You can also find casepacks of domestics on the left side (facing the bay doors) of the truck line." %>
+  <%} %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
+
+  <!-- =============================================================================== -->
+  <!-- ===== 071 203 210 211 212 213 216 218 226 231 261 266 268 270 271 284 288 ===== -->
+  <!-- =============================================================================== -->
+  <%}} else if(department == '071' || department == '203' || department == '210' || department == '211' || department == '212' || department == '213' || department == '216' || department == '218' || department == '226' || department == '231' || department == '261' || department == '266' || department == '268' || department == '270' || department == '271' || department == '284' || department == '288'){ %>
+  <% wtlotf = "This item is part of the group of items located in section B of the salesfloor that is the Consumables section of the store. This is made up of a number of areas within the department. At the start of B you have frozen and refridgerated products as well as fresh produce and bakery items. After this section is the shelf-stable, nonrefridgerated items called 'Dry Market'. Be sure to look at all of the endcaps through market and at check lanes for your products because they can be distributed seemly at random throughout the market aisles."; %>
+  <% wtlitb = "Market items will be in a series of aisles and locations in the back, but they are all close to each other. For dry market items, you'll need to look in 01A030-038. Some beverages will come on pallets that are backstocked under the beverage steel 99B101. If your product is frozen, there's only one freezer in the store for backstock, which is across from 01A035. If your product is a cold beverage or dairy item, it will likely be in the dairy cooler across from 01A038. If your item is nonrefridgerated produce, it will be in the ambient room, which is across from 01A032. If your item is refridgerated produce or health drinks located on the end of B21 on the salesfloor, it will likely by in the produce cooler, which is inside the ambient room. If your product is meat or eggs, it will be in the meat cooler, which is also in the ambient room. IMPORTANT: if your product is a vendor item (Pepsi, Coke, Snyder's, Canada Dry, Red Bull, Nabisco, Frito Lay, Herr's, or Utz), it will not be in any of those locations previously listed; it will be in the vendor aisle by the OPU hold locations under the 99B112 steel."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look through the truck line on the right side farthest from the bay doors if it is a dry market item. If it is refridgerated or frozen, use the above criteria to determine which cooler to look in. In either case, your product could be stuck on a pallet, which we usually will not dig through, so follow up with a TL for this item." %>
+  <%} %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned if it is shelf-stable product. Cold items cannot be reshopped." %>
+  <!-- =============================================================================== -->
+  <!-- =============================== 074 085 092 329 =============================== -->
+  <!-- =============================================================================== -->
+  <%}} else if(department == '074' || department == '085' || department == '092' || department == '329'){ %>
+  <% wtlotf = "These items are located in the early L aisles near electronics. Lamps/lighting (but not the bulbs themselves) and wall decor will be in K1-5, J20-21, and the stationary back wall J23-24 on the salesfloor."; %>
+  <% wtlitb = "These items will be backstocked in 02A010-012. Medium sized products like lamps will be located in 02A053-55. Larger items like lamps, mirrors, and wall decor will be backstocked on the furniture steel 99B204-206. Some hardware appliances like air conditioners and dehumidifiers are backstocked in 99B200. Some items, like vacuums, may end up in 99B103-104, the style breakout steel. "; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look through the truck line on the left side of the line. Depending on the size of your item, it may come in a casepack or repack." %>
+  <%} %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
+
+  <!-- =============================================================================== -->
+  <!-- =============================== 082 088 091 337 =============================== -->
+  <!-- =============================================================================== -->
+  <%}} else if(department == '082' || department == '088' || department == '091' || department == '337'){ %>
+  <% wtlotf = "These items are located in the sporting goods and outdoors section of O. Some seasonal items may be set in M23-25."; %>
+  <% wtlitb = "Bikes will be located in the bike steel 99B201-202. Most of the sporting goods, seasonal, and outdoors items will be backstocked in 02A029-031. Bulkier items may be somewhere on the lower level steels 99B200-204."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look through the truck line on the left side of the line. Depending on the size of your item, it may come in a casepack or repack." %>
+  <%} %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
+
+  <!-- =============================================================================== -->
+  <!-- =============================== 082 088 091 337 =============================== -->
+  <!-- =============================================================================== -->
+  <%}} else if(department == '082' || department == '088' || department == '091' || department == '337'){ %>
+  <% wtlotf = "These items are located in the sporting goods and outdoors section of O. Some seasonal items may be set in M23-25."; %>
+  <% wtlitb = "Bikes will be located in the bike steel 99B201-202. Most of the sporting goods, seasonal, and outdoors items will be backstocked in 02A029-031. Bulkier items may be somewhere on the lower level steels 99B200-204."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look through the truck line on the left side of the line. Depending on the size of your item, it may come in a casepack or repack." %>
+  <%} %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
+
+  <!-- =============================================================================== -->
+  <!-- =================================== 083 253 =================================== -->
+  <!-- =============================================================================== -->
+  <%}} else if(department == '083' || department == '253'){ %>
+  <% wtlotf = "These items are part of what's called 'PPC' (Paper, Pets, Chemical). You'll find the pet items in D14-21. Large paper products like paper towels and toilet paper will be from D1-6 but also B58 and 60. Trash bags will be in B56 and 59. Plastic bags and food containers are B54 and 57 respectively. Tissues are the back wall B62."; %>
+  <% wtlitb = "The larger paper products are backstocked on the paper steel 99B100. Other paper products will be backstocked in 01A008 and 009. Pet products are backstocked in 01A007 and 008."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look through the truck line on the right side of the line facing the bay doors. Larger items tend to be more obvious due to the branding on the box or being able to see though the plastic. Most of the smaller items will still come in casepacks for paper products. Pet products are much more likely to come in repacks, which you will need to open to see if you're looking at pet repacks or not." %>
+  <%} %>
+  <% if(sold < 2){%>
+  <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
+
+  <!-- =============================================================================== -->
+  <!-- ================================= 086 087 204 ================================= -->
+  <!-- =============================================================================== -->
+  <%}} else if(department == '083' || department == '253'){ %>
+  <% wtlotf = "Toys and games are located in the early M aisles from M1-M22 but also along the toy back wall M62 and 63."; %>
+  <% wtlitb = "Toys and games are backstocked in 02A024-028. Large toy items will be backstocked on the lower level steels 99B200-204. During Q4, toys may be backstocked in 02A010-016 but could also end up throughout almost every lower level aisle in 02A."; %>
+  <% if(delivery<6){%>
+  <% recentDelivery = "This item was recently delivered, so you will need to look through the truck line on the left side. Most of the toys we sell are Mattel or Hasbro, so it's recommended to click the item's DPCI number and look at who the vendor is. This will help you narrow down your casepacks. Legos are also popular and easy to identify by the box itself. Toys can also come in repacks, which are usually mixed into the casepacks." %>
   <%} %>
   <% if(sold < 2){%>
   <% recentSold = "This has a recent sold date, which can indicate that it was returned recently, so you need to check the returns desk in case it was returned." %>
@@ -268,7 +339,7 @@
   <p><%=recentSold%></p>
   <%}%>
   <h2>Not in any of those Locations?</h2>
-  <p>If you've check all of those locations, click the item's DPCI (the number in blue). From there, click the yellow button that say's "Item Details". Look at the dates listed. If there is a recent (0-2 days) "filled" date, that means that the item you're looking for was recently pulled from the backroom and is likely in a cart of pulled items. Look near the backstock aisles for these carts.<br><br> It is also possible that a recent pull cart or reshop cart is out on the floor being pushed or about to be pushed, so look out for those carts in the section on the salesfloor because your item may be there as well.<br><br>Another option is that the item you're looking for came in a repack or casepack that weren't delivered recently but haven't been pushed yet and is either sitting on a pallet somewhere in the back or up in the steel. <br><br> If you've reached this point, you should get with a TL to help you find this item.</p>
+  <p>If you've check all of those locations, click the item's DPCI (the number in blue). From there, click the yellow button that says "Item Details". Look at the dates listed. If there is a recent (0-2 days) "filled" date, that means that the item you're looking for was recently pulled from the backroom and is likely in a cart of pulled items. Look near the backstock aisles for these carts.<br><br> It is also possible that a recent pull cart or reshop cart is out on the floor being pushed or about to be pushed, so look out for those carts in the section on the salesfloor because your item may be there as well.<br><br>Another option is that the item you're looking for came in a repack or casepack that wasn't delivered recently but hasn't been pushed yet and is either sitting on a pallet somewhere in the back or up in the steel. <br><br> If you've reached this point, you should get with a TL to help you find this item.</p>
 
 </div>
 <%- include('partials/footer') %>
